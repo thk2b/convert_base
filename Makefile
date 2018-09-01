@@ -18,10 +18,16 @@ all: $(NAME)
 $(NAME):
 	gcc -I./src $(FLAGS) $(SRCS) -o $(NAME)
 
-test:
-	gcc -I./src $(FLAGS) $(SRCS) $(TESTS) -o $(TEST_NAME)
+test: build_ctest
+	gcc -I./src $(FLAGS) $(SRCS) $(TESTS) $(TESTDIR)/ctest.a -o $(TEST_NAME)
+
+build_ctest:
+	cd test/ctest && make && make clean
+
+fclean_ctest:
+	cd test/ctest && make fclean
 
 clean:
 
-fclean: clean
+fclean: clean fclean_ctest
 	rm -f $(NAME) $(TEST_NAME)
