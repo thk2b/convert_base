@@ -8,7 +8,6 @@ TESTDIR =	test
 
 SRCS =		$(SRCDIR)/atoi_base.c \
 			$(SRCDIR)/itoa_base.c \
-			$(SRCDIR)/main.c
 
 TESTS =		$(TESTDIR)/atoi_base.c \
 			$(TESTDIR)/itoa_base.c \
@@ -17,7 +16,7 @@ TESTS =		$(TESTDIR)/atoi_base.c \
 all: $(NAME)
 
 $(NAME):
-	gcc -I./src $(FLAGS) $(SRCS) -o $(NAME)
+	gcc -I./src $(FLAGS) $(SRCS) $(SRCDIR)/main.c -o $(NAME)
 
 test: build_ctest
 	gcc -I./src -I./test/ctest/src $(FLAGS) $(SRCS) $(TESTS) $(TESTDIR)/ctest/ctest.a -o $(TEST_NAME)
