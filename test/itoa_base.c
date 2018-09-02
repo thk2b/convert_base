@@ -10,8 +10,8 @@ void		test_itoa_base(void)
 	test_eq_str(itoa_base(123, 10), "123", "123 base 10");
 	test_eq_str(itoa_base(-10, 10), "-10", "-10 base 10");
 	test_eq_str(itoa_base(INT_MAX / 2, 10), "1073741823", "INT_MAX / 2 base 10");
-	test_eq_str(itoa_base(INT_MAX, 10), "", "INT_MAX base 10");
-	test_eq_str(itoa_base(INT_MIN+1, 10), "", "INT_MIN + 1 base 10");
+	test_eq_str(itoa_base(INT_MAX, 10), "2147483647", "INT_MAX base 10");
+	test_eq_str(itoa_base(INT_MIN, 10), "-2147483648", "INT_MIN base 10");
 	test_eq_str(itoa_base(INT_MIN / 2, 10), "-1073741824", "INT_MIN / 2 base 10");
 
 	test_eq_str(itoa_base(10, 2), "1010", "-10 base 2");

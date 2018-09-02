@@ -5,24 +5,29 @@ static char *sym = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 char *itoa_base(int n, unsigned base)
 {
+	unsigned un;
 	int		pow;
 	int		len;
 	int		is_neg;
 	char	*s;
 	char	*t;
 	int		d;
+	long	tmp;
 
-	pow = 1;
-	len = 0;
 	is_neg = 0;
 	if (n < 0)
 	{
-		n = n * -1;
+		un = (unsigned)n * -1;
 		is_neg = 1;
 	}
-	while ((long)(pow * base) <= n)
+	else
+		un = (unsigned)n;
+	pow = 1;
+	len = 0;
+	while ((tmp = pow * base) <= un && tmp % base == 0)
+	// HACK: detect overflow
 	{
-		pow = pow * base;
+		pow = (int)tmp;
 		len++;
 	}
 	if ((s = (char*)malloc((len + is_neg + 1) * sizeof(char))) == NULL)
@@ -32,8 +37,9 @@ char *itoa_base(int n, unsigned base)
 		*s++ = '-';
 	while (pow > 0)
 	{
-		d = n / pow;
-		n -= d * pow;
+		d = un / pow;
+		un -= d * pow;
+		un %= pow;
 		pow /= base;
 		*s++ = sym[d];
 	}
