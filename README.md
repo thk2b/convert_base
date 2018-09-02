@@ -3,7 +3,8 @@ Convert numbers from base to base
 
 # setup
 
-run `make`
+`make`
+`make test && ./test.out` 
 
 # usage
 
