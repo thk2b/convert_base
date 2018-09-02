@@ -7,11 +7,11 @@ SRCDIR =	src
 TESTDIR =	test
 
 SRCS =		$(SRCDIR)/atoi_base.c \
-			$(SRCDIR)/itoa_base.c \
+#			$(SRCDIR)/itoa_base.c \
 
 TESTS =		$(TESTDIR)/atoi_base.c \
-			$(TESTDIR)/itoa_base.c \
 			$(TESTDIR)/test.c
+#			$(TESTDIR)/itoa_base.c \
 
 all: $(NAME)
 
