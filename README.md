@@ -11,5 +11,5 @@ make test && ./test.out
 ```
 
 ```
-./convert_base num [[ input base ] output base ]
+./convert_base num [[ input base = 10 ] output base ]
 ```
