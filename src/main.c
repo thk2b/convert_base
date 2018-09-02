@@ -19,9 +19,11 @@ int		main(int argc, char **argv)
 		in_base = atoi(argv[2]);
 		out_base = atoi(argv[3]);
 	}
+	if (in >= 36 || out >= 36)
+		return (1);
 	in = atoi_base(n, in_base);
 	out = itoa_base(in, out_base);
 	printf("%s\n", out);
 
-	return 0;
+	return (0);
 }
