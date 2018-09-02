@@ -1,12 +1,17 @@
 # convert_base
-Convert numbers from base to base
+Convert numbers from base to base.
 
-# setup
+Created to learn `atoi_base` and `itoa_base`.
 
-run `make`
+
 
 # usage
 
 ```
-./convert_base num [[ input base ] output base ]
+make
+make test && ./test.out
+```
+
+```
+./convert_base num [[ input base = 10 ] output base ]
 ```
