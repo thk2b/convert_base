@@ -38,7 +38,6 @@ char *itoa_base(int n, unsigned base)
 	while (pow > 0)
 	{
 		d = un / pow;
-		un -= d * pow;
 		un %= pow;
 		pow /= base;
 		*s++ = sym[d];
