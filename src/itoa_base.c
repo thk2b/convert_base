@@ -11,7 +11,6 @@ char *itoa_base(int n, unsigned base)
 	int		is_neg;
 	char	*s;
 	char	*t;
-	int		d;
 	long	tmp;
 
 	is_neg = 0;
@@ -37,10 +36,9 @@ char *itoa_base(int n, unsigned base)
 		*s++ = '-';
 	while (pow > 0)
 	{
-		d = un / pow;
+		*s++ = sym[un / pow];
 		un %= pow;
 		pow /= base;
-		*s++ = sym[d];
 	}
 	*++s = '\0';
 	return (t);
