@@ -1,5 +1,5 @@
 #include <limits.h>
-#include "../test/ctest/src/ctest.h"
+#include "ctest.h"
 #include "convert_base.h"
 
 void		test_itoa_base(void)
