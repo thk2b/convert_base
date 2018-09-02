@@ -1,5 +1,7 @@
 # convert_base
-Convert numbers from base to base
+Convert numbers from base to base.
+
+Created to learn `atoi_base` and `itoa_base`.
 
 
 
