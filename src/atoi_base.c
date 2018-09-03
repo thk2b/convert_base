@@ -18,10 +18,10 @@ int		atoi_base(char *s, unsigned base)
 	int sign;
 
 	n = 0;
+	while (*s <= ' ')
+		s++;
 	sign = *s == '-' ? -1 : 1;
 	if (*s == '-' || *s == '+')
-		s++;
-	while (*s <= ' ')
 		s++;
 	while ((v = value_of(*s++)) >= 0 && v <= (int)base-1)
 		n = n * base + v;

@@ -27,6 +27,9 @@ void	test_atoi_base(void)
 	test_eq_int(atoi_base("-7FFFFFFF", 16), INT_MIN+1, "INT_MIN+1 base 16");
 	test_eq_int(atoi_base("7DE86A9F", 16), 2112383647, "2112383647 base 16");
 	
+	test_eq_int(atoi_base("   -1", 10), -1, "spaces before number");
+	test_eq_int(atoi_base("   +1", 10), 1, "spaces before number with +");
+
 	test_eq_int(atoi_base("122+4", 10), 122, "invalid symbol");
 	test_eq_int(atoi_base("12229a12", 10), 12229, "symbol beyond base");
 	test_eq_int(atoi_base("01201", 2), 1, "symbol beyond base");
