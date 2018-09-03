@@ -23,7 +23,7 @@ int		atoi_base(char *s, unsigned base)
 	sign = *s == '-' ? -1 : 1;
 	if (*s == '-' || *s == '+')
 		s++;
-	while ((v = value_of(*s++)) >= 0 && v <= (int)base-1)
+	while ((v = value_of(*s++)) >= 0 && v < (int)base)
 		n = n * base + v;
 	return (n * sign);
 }
